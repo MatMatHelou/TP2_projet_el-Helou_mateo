@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=4 uid="uid://mx0jpindj2tf"]
+
+[ext_resource type="Texture2D" uid="uid://tjtchiw7n8i8" path="res://Projet/assets/images/GrassDirt.png" id="1_o7b8y"]
+[ext_resource type="PackedScene" uid="uid://cguqhx5xlfac0" path="res://Projet/node_2d.tscn" id="2_0tgxv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hng33"]
+texture = ExtResource("1_o7b8y")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8qlw1"]
+sources/0 = SubResource("TileSetAtlasSource_hng33")
+
+[node name="area" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAEAAAAJAAMAAAABAAIAAAAKAAMAAAAGAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAEAAAAEAAAAAAAPAAIAAAAEAAEAAAAPAAMAAAAKAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAIAAAAEAAAAAAASAAMAAAAKAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAAAAAAEAAAAAAAWAAEAAAAEAAEAAAAWAAIAAAAEAAIAAAAWAAMAAAAKAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAP7/AAAEAAAAAAAaAP//AAAEAAEAAAAaAAAAAAAEAAIAAAAaAAEAAAAEAAIAAAAaAAIAAAAEAAIAAAAaAAMAAAAKAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_8qlw1")
+
+[node name="player" parent="TileMapLayer" instance=ExtResource("2_0tgxv")]
