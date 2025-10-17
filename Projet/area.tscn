@@ -178,7 +178,6 @@ animations = [{
 shape = SubResource("CircleShape2D_u3p55")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_left = 172.0
 offset_top = -906.0
 offset_right = 2151.0
