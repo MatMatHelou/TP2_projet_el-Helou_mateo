@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://mx0jpindj2tf"]
+[gd_scene load_steps=18 format=4 uid="uid://mx0jpindj2tf"]
 
 [ext_resource type="Texture2D" uid="uid://tjtchiw7n8i8" path="res://Projet/assets/images/GrassDirt.png" id="1_o7b8y"]
 [ext_resource type="PackedScene" uid="uid://cguqhx5xlfac0" path="res://Projet/node_2d.tscn" id="2_0tgxv"]
 [ext_resource type="Script" uid="uid://bxm6obfd4yu06" path="res://Projet/tile_map_layer.gd" id="2_hng33"]
+[ext_resource type="Texture2D" uid="uid://bfei5hwrs4322" path="res://Projet/assets/images/ciel.jpg" id="4_hng33"]
+[ext_resource type="Texture2D" uid="uid://duhd8kfnunjih" path="res://Projet/assets/images/flag2.png" id="5_8qlw1"]
+[ext_resource type="Texture2D" uid="uid://dhcvyx6b4up6u" path="res://Projet/assets/images/coin.png" id="6_u3p55"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3p55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hng33"]
 texture = ExtResource("1_o7b8y")
@@ -105,7 +110,79 @@ texture = ExtResource("1_o7b8y")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hng33")
 
-[node name="area" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3p55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8qlw1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw5w8"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(0, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaxig"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(84, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7jpe"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(168, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3415"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(252, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k24gr"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(336, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6yjx"]
+atlas = ExtResource("6_u3p55")
+region = Rect2(420, 0, 84, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hn63g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw5w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaxig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7jpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3415")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k24gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6yjx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="area" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u3p55")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 172.0
+offset_top = -906.0
+offset_right = 2151.0
+offset_bottom = 96.0
+texture = ExtResource("4_hng33")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(242, 1)
@@ -115,3 +192,13 @@ script = ExtResource("2_hng33")
 
 [node name="player" parent="TileMapLayer" instance=ExtResource("2_0tgxv")]
 position = Vector2(17, -15)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(891.25, -215)
+scale = Vector2(0.238333, 0.2)
+sprite_frames = SubResource("SpriteFrames_u3p55")
+
+[node name="coin" type="AnimatedSprite2D" parent="."]
+position = Vector2(965.5, -22.5)
+scale = Vector2(0.202381, 0.202381)
+sprite_frames = SubResource("SpriteFrames_hn63g")
