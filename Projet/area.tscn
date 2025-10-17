@@ -204,5 +204,3 @@ position = Vector2(965.5, -22.5)
 scale = Vector2(0.202381, 0.202381)
 sprite_frames = SubResource("SpriteFrames_hn63g")
 script = ExtResource("7_cw5w8")
-
-[connection signal="body_entered" from="." to="coin" method="_on_area_body_entered"]
