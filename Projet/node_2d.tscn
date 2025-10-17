@@ -192,7 +192,7 @@ visible = false
 position = Vector2(5, -10)
 sprite_frames = SubResource("SpriteFrames_fprah")
 animation = &"idle"
-frame_progress = 0.697526
+frame_progress = 0.933828
 
 [node name="Sprite2D" type="Sprite2D" parent="chien"]
 position = Vector2(-50, -53)
@@ -220,6 +220,6 @@ scale = Vector2(0.216667, 0.2)
 sprite_frames = SubResource("SpriteFrames_7dd74")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(686, -13)
-scale = Vector2(0.255061, 0.241537)
+position = Vector2(707, -8)
+scale = Vector2(0.190476, 0.184524)
 sprite_frames = SubResource("SpriteFrames_p8e1g")
