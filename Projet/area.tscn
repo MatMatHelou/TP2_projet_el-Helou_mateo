@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://mx0jpindj2tf"]
+[gd_scene load_steps=19 format=4 uid="uid://mx0jpindj2tf"]
 
 [ext_resource type="Texture2D" uid="uid://tjtchiw7n8i8" path="res://Projet/assets/images/GrassDirt.png" id="1_o7b8y"]
 [ext_resource type="PackedScene" uid="uid://cguqhx5xlfac0" path="res://Projet/node_2d.tscn" id="2_0tgxv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfei5hwrs4322" path="res://Projet/assets/images/ciel.jpg" id="4_hng33"]
 [ext_resource type="Texture2D" uid="uid://duhd8kfnunjih" path="res://Projet/assets/images/flag2.png" id="5_8qlw1"]
 [ext_resource type="Texture2D" uid="uid://dhcvyx6b4up6u" path="res://Projet/assets/images/coin.png" id="6_u3p55"]
+[ext_resource type="Script" uid="uid://tg41eaijgmr2" path="res://Projet/coin.gd" id="7_cw5w8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u3p55"]
 
@@ -190,7 +191,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAA
 tile_set = SubResource("TileSet_8qlw1")
 script = ExtResource("2_hng33")
 
-[node name="player" parent="TileMapLayer" instance=ExtResource("2_0tgxv")]
+[node name="player" parent="TileMapLayer" groups=["player"] instance=ExtResource("2_0tgxv")]
 position = Vector2(17, -15)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -202,3 +203,6 @@ sprite_frames = SubResource("SpriteFrames_u3p55")
 position = Vector2(965.5, -22.5)
 scale = Vector2(0.202381, 0.202381)
 sprite_frames = SubResource("SpriteFrames_hn63g")
+script = ExtResource("7_cw5w8")
+
+[connection signal="body_entered" from="." to="coin" method="_on_area_body_entered"]
