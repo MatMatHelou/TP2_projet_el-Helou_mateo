@@ -1,7 +1,7 @@
 # TP2_projet_el-Helou_mateo
 
-#Controle
+## Controle
 
-## flèche de droite - bouger vers la droite
-## flèche de gauche - bouger vers la gauche
-## flèche du haut - sauter
+### flèche de droite - bouger vers la droite
+### flèche de gauche - bouger vers la gauche
+### flèche du haut - sauter
